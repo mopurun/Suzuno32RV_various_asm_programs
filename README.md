@@ -4,6 +4,8 @@ Suzuno32RVをアセンブリ言語で動かしてみました。WSL2のUbuntuの
 
 書き込みはWCHISPStudioでやりました。Object File1にhexファイルを読み込ませます。
 
+ファイル構成
+
 <pre>
 \\wsl.localhost\Ubuntu\home\UserName/
   ├ program/
