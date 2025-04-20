@@ -2,7 +2,9 @@
 
 Suzuno32RVをアセンブリ言語で動かしてみました。WSL2のUbuntuの環境で生成しました。
 
-書き込みはWCHISPStudioでやりました。Object File1にhexファイルを読み込ませます。
+
+
+書き込みはWCHISPStudioでやりました。Object File1に生成したhexファイルを読み込ませます。
 
 ファイル構成
 
