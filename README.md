@@ -4,7 +4,11 @@ Suzuno32RVをアセンブリ言語で動かしてみました。WSL2のUbuntuの
 
 
 
-書き込みはWCHISPStudioでやりました。Object File1に生成したhexファイルを読み込ませます。
+書き込みはWCHISPStudioでやりました。
+- RISC-V MCUsをクリックしてタブを開く
+- BOOT0スイッチを押しながらType-CコネクタとPC間をUSB接続ケーブルで接続する
+- Object File1に生成したhexファイルを読み込ませる
+- Downloadボタンをクリックする
 
 ファイル構成
 
