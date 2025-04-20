@@ -1,0 +1,63 @@
+
+main:
+	LUI sp,0x20000
+	ADDI sp,sp,0x700
+	LUI gp,0x20000
+	ADDI gp,gp,0x500
+
+
+	#R32_RCC_APB2PCENR=0x40021018=0x35
+	LUI t0,0x40021
+	ADDI t1,x0,0x7D
+	SW t1,0x18(t0)
+	AND  t1,t1,x0
+	#R32_GPIOA_CFGLR=0x40010C00=0x33333333
+	LI t0,0x40010800	
+	LI t1,0x44344444
+	SW t1,0(t0)
+	AND  t1,t1,x0
+
+	#reset register
+	AND  s1,s1,x0
+
+	LOOPS:
+	ADDI s1,s1,0x01
+	#R32_GPIOA_OUTDR=0x40010C0C=0x02
+	LI t0,0x4001080C
+	ADDI t1,t1,0x00
+	SW  t1,0(t0)
+	AND  t0,t0,x0
+	AND  t1,t1,x0
+
+
+	JAL x1,TIMER
+
+	ADDI s1,s1,0x01
+	#R32_GPIOA_OUTDR=0x40010C0C=0x01
+	LI t0,0x4001080C
+	ADDI t1,t1,0x20
+	SW  t1,0(t0)
+	AND  t0,t0,x0
+	AND  t1,t1,x0
+
+	JAL x1,TIMER
+
+	#goto main loop
+	JAL x1,LOOPS
+
+
+	TIMER:
+	ADDI sp,sp,-8
+	SW ra,4(sp)
+	AND  s1,s1,x0
+	OR  s1,s1,1	
+	LUI t2,0x00030
+	ADDI t2,t2,0x700
+	LOOP3:
+	SUB t2,t2,s1
+	BNEZ t2,LOOP3
+	AND  s1,s1,x0
+	LW ra,4(sp)
+	ADDI sp,sp,8
+	RET
+
