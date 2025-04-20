@@ -18,5 +18,5 @@ Suzuno32RVをアセンブリ言語で動かしてみました。WSL2のUbuntuの
   ├ program/
   │  ├ hello.asm 
   │　└ main.sh
-  └ ダウンロードしたriscv-gnu-toolchainをここに置いて/opt/riscvにインストール？しました。
+  └ ダウンロードしたriscv-gnu-toolchainをここに置いて/opt/riscvにmakeしました。
 </pre>
