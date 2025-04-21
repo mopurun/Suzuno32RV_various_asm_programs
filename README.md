@@ -8,7 +8,7 @@ https://github.com/riscv-collab/riscv-gnu-toolchain
 
 ～Ubuntuターミナルコマンド～
 <pre>
-  cd <shファイルがあるディレクトリ>
+  cd '<shファイルがあるディレクトリ'>
   sh main.sh
 </pre>
 
