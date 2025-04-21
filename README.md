@@ -6,6 +6,18 @@ riscv-gnu-toolchainを使ってhexファイルを生成します。
 
 https://github.com/riscv-collab/riscv-gnu-toolchain
 
+
+～ファイル構成～
+
+<pre>
+\\wsl.localhost\Ubuntu\home\UserName\
+  ├ program\
+  │  ├ hello.asm 
+  │　└ main.sh
+  └ ダウンロードしたriscv-gnu-toolchainをここに置いて/opt/riscvにmakeしました。
+</pre>
+
+
 ～Ubuntuターミナルコマンド～
 <pre>
   cd [shファイルがあるディレクトリ]
@@ -18,13 +30,3 @@ https://github.com/riscv-collab/riscv-gnu-toolchain
 - Chip Optionに認識結果が出る(Chip Series=CH32V20x, Chip Model=CH32V203C8T6, Dnld Port= USB,Dev List=何かが表示される)
 - Object File1に生成したhexファイルを読み込ませる
 - Downloadボタンをクリックする
-
-～ファイル構成～
-
-<pre>
-\\wsl.localhost\Ubuntu\home\UserName\
-  ├ program\
-  │  ├ hello.asm 
-  │　└ main.sh
-  └ ダウンロードしたriscv-gnu-toolchainをここに置いて/opt/riscvにmakeしました。
-</pre>
