@@ -12,7 +12,7 @@ https://github.com/riscv-collab/riscv-gnu-toolchain
 <pre>
 \\wsl.localhost\Ubuntu\home\UserName\
   ├ program\
-  │  ├ hello.asm 
+  │  ├ hello.asm などのasmファイル
   │　└ main.sh
   └ ダウンロードしたriscv-gnu-toolchainをここに置いて/opt/riscvにmakeしました。
 </pre>
