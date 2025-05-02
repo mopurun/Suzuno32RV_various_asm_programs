@@ -53,9 +53,9 @@ main:
 
 
 
-	andi s1,a0,0xf
+
 	.altmacro
-	.macro sft1 from=2,to=8
+	.macro sft1 from=1,to=8
 	.print "Info:macro-sft1:\from"
 	#andi s\from , s\from , 0
 	srli s\from , a0 , ((\from-1)*4)	
