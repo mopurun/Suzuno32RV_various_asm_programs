@@ -51,24 +51,11 @@ main:
 
 	LI a0,0xB007C0DE
 
-
-
-
 	.altmacro
-	.macro sft1 from=1,to=8
-	.print "Info:macro-sft1:\from"
-	#andi s\from , s\from , 0
-	srli s\from , a0 , ((\from-1)*4)	
-	andi s\from , s\from , 0xf
-	.if		\to-\from
-	sft1	%(\from+1) , \to
-	.endif
-	.endm
-	sft1
-
-	#.altmacro
 	.macro reg2ascii from=1,to=8
 	.print "Info:macro-reg2ascii:\from"
+	srli s\from , a0 , ((\from-1)*4)	
+	andi s\from , s\from , 0xf
 	li t5,0x9
 	bgeu t5,s\from,1f
 	addi s\from,s\from,0x7
