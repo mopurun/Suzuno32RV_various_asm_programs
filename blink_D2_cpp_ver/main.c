@@ -1,7 +1,8 @@
 
-#define R32_RCC_APB2PCENR ((volatile unsigned long*)(0x40021018))
-#define R32_GPIOA_CFGLR ((volatile unsigned long*)(0x40010800))
-#define R32_GPIOA_OUTDR ((volatile unsigned long*)(0x4001080C))
+#define register32(address) *((volatile unsigned long*)(address))
+#define R32_RCC_APB2PCENR register32(0x40021018)
+#define R32_GPIOA_CFGLR register32(0x40010800)
+#define R32_GPIOA_OUTDR register32(0x4001080C)
 
 
 
@@ -18,12 +19,12 @@ void (*const vector_table2[])(void) = {
 
 
 int main(void){
-    *R32_RCC_APB2PCENR = 0x7D;
-    *R32_GPIOA_CFGLR = 0x44344444;
+    R32_RCC_APB2PCENR = 0x7D;
+    R32_GPIOA_CFGLR = 0x44344444;
     while(1){
-        *R32_GPIOA_OUTDR = 0x00;
+        R32_GPIOA_OUTDR = 0x00;
         delay(100000);
-        *R32_GPIOA_OUTDR = 0x20;
+        R32_GPIOA_OUTDR = 0x20;
         delay(100000);
     }
 
